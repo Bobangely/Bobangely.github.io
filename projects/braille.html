@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="th" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Braille-to-Speech Scanner — Bavonvit Surin</title>
+  <meta name="description" content="ต้นแบบระบบอ่านอักษรเบรลล์ไทย/อังกฤษจากกล้อง ด้วย YOLO และ OpenCV แปลงเป็นข้อความและเสียงพูด">
+  <meta property="og:title" content="Braille-to-Speech Scanner — Bavonvit Surin">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bobangely.github.io/projects/braille.html">
+  <meta property="og:image" content="https://bobangely.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__name" href="../index.html">Bavonvit<span class="mark" aria-hidden="true"></span></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn--small" href="../assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </header>
+
+  <main>
+    <section class="detail-hero">
+      <a class="back" href="../index.html#projects">← กลับหน้าหลัก</a>
+      <h1 data-hero-fade>Braille-to-Speech Scanner</h1>
+      <p class="project__meta" data-hero-fade>Computer Vision / AI · Team project · 2026</p>
+      <p class="detail-lead" data-hero-fade>ต้นแบบระบบอ่านอักษรเบรลล์ภาษาไทย/อังกฤษจากกล้อง แล้วแปลงเป็นข้อความและเสียงพูด ช่วยให้คนที่อ่านเบรลล์ไม่เป็น เช่น ครู ผู้ปกครอง และเจ้าหน้าที่ ตรวจหรือฟังเนื้อหาเบรลล์ได้ทันที</p>
+      <div class="detail-actions" data-hero-fade>
+        <a class="btn" href="https://github.com/Bobangely/Braille-to-Speech-Scanner" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <figure class="detail-cover project__media" style="view-transition-name: vt-braille">
+        <img src="../assets/projects/braille-detection.webp" width="1428" height="926" alt="หน้าจอสแกนเนอร์ตรวจจับเซลล์เบรลล์จากกล้องจริง 83 เซลล์ พร้อมข้อความภาษาไทยที่ถอดรหัสได้">
+      </figure>
+    </section>
+
+    <section class="detail-section" aria-labelledby="overview-title">
+      <h2 id="overview-title" data-reveal>Overview</h2>
+      <div class="overview" data-reveal>
+        <div>
+          <h3>ปัญหา</h3>
+          <p>จุดเบรลล์นูนบนกระดาษขาวมีคอนทราสต์ต่ำมาก กล้องทั่วไปแยกจุดได้ไม่แม่นเมื่อแสงเปลี่ยน ระบบจึงอ่านจุดที่แต้มสีน้ำเงินหรือแดง ซึ่งตรวจด้วยสีได้เสถียรกว่าตรวจจากเงา</p>
+        </div>
+        <div>
+          <h3>บทบาทของผม</h3>
+          <ul class="project__points">
+            <li>งานทีมที่แบ่งงานกันทำ ผมร่วมทำทุกส่วนของระบบ ตั้งแต่ข้อมูลจนถึงเสียงพูด</li>
+            <li>เตรียม dataset และ annotate ด้วย Roboflow เทรนโมเดล YOLO แล้วตรวจผลหาจุดที่ตรวจผิดหรือตกหล่น</li>
+            <li>ตรวจจับจุดสีด้วย OpenCV (HSV) และจัดกริดเซลล์ 2×3</li>
+            <li>ติดตามข้ามเฟรมด้วย optical flow และยืนยันผลหลายเฟรม</li>
+            <li>ตัวถอดรหัสเบรลล์ไทย/อังกฤษ (parser + lexicon) และเสียงพูด Piper / Edge TTS</li>
+            <li>หน้าจอสแกนเนอร์, automated tests และจัดการโค้ดด้วย Git/GitHub</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tech stack</h3>
+          <p class="project__stack">Python · Ultralytics YOLOv8 · Roboflow · OpenCV · NumPy · Piper TTS · Edge TTS · Git/GitHub</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="pipeline-title">
+      <h2 id="pipeline-title" data-reveal>How it works</h2>
+      <div class="gallery gallery--steps">
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/braille-input.webp" data-lightbox data-caption="ภาพทดสอบ: ประโยค “สวัสดีครับผม” 12 เซลล์"><img src="../assets/projects/braille-input.webp" width="1275" height="248" loading="lazy" alt="ภาพทดสอบอักษรเบรลล์ 12 เซลล์บนพื้นสีอ่อน"></a>
+          <figcaption><strong>ภาพเบรลล์ต้นฉบับ</strong>ภาพทดสอบประโยค “สวัสดีครับผม” 12 เซลล์</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/braille-yolo.webp" data-lightbox data-caption="ผล YOLO รุ่นแรก: ตรวจได้ 38 จุดใน 12 เซลล์ แต่ยังถอดบางเซลล์ผิด"><img src="../assets/projects/braille-yolo.webp" width="1275" height="328" loading="lazy" alt="ผลโมเดล YOLO ตีกรอบจุดเบรลล์และเซลล์ พร้อมค่าความมั่นใจ"></a>
+          <figcaption><strong>YOLO ตรวจจับจุดและเซลล์</strong>ผลรุ่นแรก ตรวจได้ 38 จุดใน 12 เซลล์ แต่ยังถอดบางเซลล์ผิด ผลแบบนี้คือสิ่งที่ต้องตรวจทานและปรับข้อมูลเทรน</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/braille-yolo-multiline.webp" data-lightbox data-caption="YOLO อ่านเบรลล์หลายบรรทัด: 6 เซลล์ 16 จุด"><img src="../assets/projects/braille-yolo-multiline.webp" width="900" height="572" loading="lazy" alt="ผล YOLO อ่านเบรลล์สองบรรทัด จัดเป็นกริดเซลล์ 2×3"></a>
+          <figcaption><strong>จัดเป็นกริดเซลล์ 2×3</strong>อ่านได้หลายบรรทัด แต่ละเซลล์ระบุตำแหน่งจุด 1–6</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/braille-cells.webp" data-lightbox data-caption="แยกทีละเซลล์ พร้อมเลขจุดที่อ่านได้"><img src="../assets/projects/braille-cells.webp" width="1280" height="368" loading="lazy" alt="ภาพเซลล์เบรลล์ 12 เซลล์ที่แยกออกมา พร้อมเลขจุด"></a>
+          <figcaption><strong>แยกทีละเซลล์</strong>แต่ละเซลล์บอกจุดที่นูน เช่น 234 หรือ 2456 เพื่อส่งต่อให้ตัวถอดรหัส</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <!-- copied from config_thai_legacy.py L25-L37 in the project repo -->
+          <pre class="code"><code>THAI_CONSONANTS = {
+    # --- ก - ง ---
+    frozenset({1, 2, 4, 5}):       <b>'ก'</b>,    #  (dots 1,2,4,5)
+    frozenset({1, 3}):             <b>'ข'</b>,    #  (high, dots 1,3)
+    frozenset({1, 3, 6}):          <b>'ค'</b>,    #  (low, dots 1,3,6)
+    frozenset({1, 2, 4, 5, 6}):    <b>'ง'</b>,    #  (dots 1,2,4,5,6)
+
+    # --- จ - ซ ---
+    frozenset({2, 4, 5}):          <b>'จ'</b>,    #  (dots 2,4,5)
+    frozenset({3, 4}):             <b>'ฉ'</b>,    #  (high, dots 3,4)
+    frozenset({3, 4, 6}):          <b>'ช'</b>,    #  (low, dots 3,4,6)
+    frozenset({2, 3, 4, 6}):       <b>'ซ'</b>,    #  (low, dots 2,3,4,6)
+    ...
+}</code></pre>
+          <figcaption><strong>ตารางแปลงจุดเป็นตัวอักษร</strong>ชุดจุดของแต่ละเซลล์ (<code>frozenset</code>) ถูกแมปเป็นพยัญชนะไทยตามมาตรฐานเบรลล์ไทย <a class="link" href="https://github.com/Bobangely/Braille-to-Speech-Scanner/blob/HEAD/config_thai_legacy.py#L25-L37" target="_blank" rel="noopener">ดูไฟล์เต็มบน GitHub ↗</a></figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/braille-decode.webp" data-lightbox data-caption="ถอดรหัสเป็นข้อความไทย “สวัสดีครับผม” 12 เซลล์ 39 จุด"><img src="../assets/projects/braille-decode.webp" width="1275" height="328" loading="lazy" alt="ผลถอดรหัสเบรลล์เป็นข้อความไทย สวัสดีครับผม"></a>
+          <figcaption><strong>ถอดรหัสเป็นข้อความไทย</strong>ได้ “สวัสดีครับผม” ครบ 12 เซลล์ 39 จุด แล้วส่งต่อให้ระบบอ่านออกเสียง</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/braille-live.webp" data-lightbox data-caption="อ่านจากกล้องจริงที่ 4K: 9 เซลล์ 28 จุด ได้ “สวัสดีคับ” ตรงตามเซลล์ในภาพ ยืนยันผล 6/6 ที่ 20 fps"><img src="../assets/projects/braille-live.webp" width="1437" height="895" loading="lazy" alt="หน้าจอสแกนเนอร์ระหว่างอ่านเบรลล์จากกล้องจริง 9 เซลล์ ผลยืนยันแล้วคือ สวัสดีคับ"></a>
+          <figcaption><strong>อ่านจากกล้องจริง</strong>กล้อง 4K อ่าน 9 เซลล์ 28 จุด ได้ “สวัสดีคับ” ตรงตามเซลล์ในภาพ ยืนยันผลครบ 6/6 ที่ 20 fps</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="features-title">
+      <h2 id="features-title" data-reveal>Features</h2>
+      <ul class="detail-list" data-reveal>
+        <li>อ่านเบรลล์ไทยตามมาตรฐาน รวมสระ วรรณยุกต์ และเครื่องหมาย รองรับอังกฤษ Grade 1</li>
+        <li>เลือกความละเอียดกล้องอัตโนมัติ (4K / 2K / 1080p) พร้อม zoom และ pan</li>
+        <li>ยืนยันข้อความเมื่อผลนิ่งหลายเฟรม ลดการอ่านผิดจากมือหรือกล้องสั่น</li>
+        <li>เสียงพูดภาษาไทยแบบ offline (Piper) และ online (Edge TTS)</li>
+        <li>โมเดล YOLO สำหรับเสนอกรอบบริเวณข้อความ</li>
+        <li>ข้อจำกัด: อ่านเฉพาะจุดที่แต้มสีน้ำเงินหรือแดง และทดสอบบน Windows เป็นหลัก</li>
+      </ul>
+    </section>
+
+    <a class="next-project" href="utcc.html" data-reveal>
+      <span>Next project</span>
+      <strong>UTCC RECOM →</strong>
+    </a>
+    <div class="detail-footer-gap"></div>
+  </main>
+
+  <dialog class="lightbox" aria-label="ภาพขยาย">
+    <button class="lightbox__close" type="button" aria-label="ปิดภาพขยาย">✕</button>
+    <figure><img alt=""><figcaption></figcaption></figure>
+  </dialog>
+
+  <footer class="footer">
+    <p class="footer__name" aria-hidden="true">Bavonvit Surin</p>
+    <p class="footer__copy">© 2026 Bavonvit Surin</p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script defer src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- a braille cell for "b" (dots 1, 2) on the site's blue, faint dots for the rest -->
+  <rect width="64" height="64" rx="14" fill="#2F5BFF"/>
+  <g fill="#FFFFFF">
+    <circle cx="23" cy="16" r="6.5"/>
+    <circle cx="23" cy="32" r="6.5"/>
+    <circle cx="41" cy="16" r="6.5" opacity=".3"/>
+    <circle cx="41" cy="32" r="6.5" opacity=".3"/>
+    <circle cx="23" cy="48" r="6.5" opacity=".3"/>
+    <circle cx="41" cy="48" r="6.5" opacity=".3"/>
+  </g>
+</svg>

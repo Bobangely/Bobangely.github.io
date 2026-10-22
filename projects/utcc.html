@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="th" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UTCC RECOM — Bavonvit Surin</title>
+  <meta name="description" content="เว็บแนะนำอาคารและสถานที่ในและรอบมหาวิทยาลัยหอการค้าไทย ด้วย Spring Boot, PostgreSQL/Supabase และ AI chatbot">
+  <meta property="og:title" content="UTCC RECOM — Bavonvit Surin">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bobangely.github.io/projects/utcc.html">
+  <meta property="og:image" content="https://bobangely.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__name" href="../index.html">Bavonvit<span class="mark" aria-hidden="true"></span></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn--small" href="../assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </header>
+
+  <main>
+    <section class="detail-hero">
+      <a class="back" href="../index.html#projects">← กลับหน้าหลัก</a>
+      <h1 data-hero-fade>UTCC RECOM</h1>
+      <p class="project__meta" data-hero-fade>Recommendation Website · Full-stack · 2025–2026</p>
+      <p class="detail-lead" data-hero-fade>เว็บแนะนำอาคาร สถานที่ภายในมหาวิทยาลัย และร้านอาหาร คาเฟ่ หอพัก รอบมหาวิทยาลัยหอการค้าไทย พร้อมแผนที่ รีวิว และ AI chatbot</p>
+      <div class="detail-actions" data-hero-fade>
+        <a class="btn" href="https://github.com/Bobangely/UTCC_RECOM" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <figure class="detail-cover project__media" style="view-transition-name: vt-utcc">
+        <img src="../assets/projects/utcc-home.webp" width="1600" height="770" alt="หน้าแรกของเว็บ UTCC RECOM ค้นพบสถานที่น่าสนใจรอบ ม.หอการค้าไทย">
+      </figure>
+    </section>
+
+    <section class="detail-section" aria-labelledby="overview-title">
+      <h2 id="overview-title" data-reveal>Overview</h2>
+      <div class="overview" data-reveal>
+        <div>
+          <h3>เว็บนี้ทำอะไร</h3>
+          <p>รวมอาคารและสถานที่ภายในมหาวิทยาลัย กับร้านอาหาร คาเฟ่ หอพัก และบริการรอบมหาวิทยาลัยไว้ในเว็บเดียว พร้อมแผนที่ รีวิว และ AI chatbot ช่วยหาสถานที่</p>
+        </div>
+        <div>
+          <h3>สิ่งที่ผมทำ</h3>
+          <ul class="project__points">
+            <li>ค้นหา กรองตามหมวดหมู่ และอัปเดตเนื้อหาด้วย JavaScript ดึงข้อมูลจาก REST API</li>
+            <li>สร้าง REST API ด้วย Spring Boot เชื่อม PostgreSQL บน Supabase</li>
+            <li>เขียน manual test cases และ API checks ตรวจการทำงานและบันทึก defect</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tech stack</h3>
+          <p class="project__stack">Java 17 · Spring Boot 3.2 · Spring Data JPA · PostgreSQL / Supabase · Gemini API · HTML · CSS · JavaScript · Maven</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" data-reveal>Screens</h2>
+      <div class="gallery">
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/utcc-home.webp" data-lightbox data-caption="หน้าแรก: ค้นพบสถานที่น่าสนใจรอบ ม.หอการค้าไทย"><img src="../assets/projects/utcc-home.webp" width="1600" height="770" loading="lazy" alt="หน้าแรกของเว็บ UTCC RECOM"></a>
+          <figcaption><strong>หน้าแรก</strong>ทางเข้าแผนผังมหาวิทยาลัยและสถานที่รอบมหาวิทยาลัย</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/utcc-map.webp" data-lightbox data-caption="แผนผังอาคารภายในมหาวิทยาลัย"><img src="../assets/projects/utcc-map.webp" width="1600" height="768" loading="lazy" alt="แผนผังอาคารภายในมหาวิทยาลัยหอการค้าไทย"></a>
+          <figcaption><strong>แผนผังมหาวิทยาลัย</strong>ดูตำแหน่งอาคารภายในมหาวิทยาลัย</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/utcc-places-chatbot.webp" data-lightbox data-caption="รายการสถานที่ในมหาวิทยาลัย และ AI chatbot"><img src="../assets/projects/utcc-places-chatbot.webp" width="1600" height="770" loading="lazy" alt="รายการสถานที่ในมหาวิทยาลัยพร้อมหน้าต่าง AI chatbot"></a>
+          <figcaption><strong>สถานที่ในมหาวิทยาลัย + AI chatbot</strong>ถามหาสถานที่จาก chatbot ได้ระหว่างดูรายการ</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/utcc-nearby-map.webp" data-lightbox data-caption="แผนที่สถานที่รอบมหาวิทยาลัย"><img src="../assets/projects/utcc-nearby-map.webp" width="1600" height="768" loading="lazy" alt="แผนที่แสดงร้านอาหารและบริการรอบมหาวิทยาลัย"></a>
+          <figcaption><strong>แผนที่รอบมหาวิทยาลัย</strong>ร้านอาหาร คาเฟ่ หอพัก และบริการบนแผนที่</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/utcc-nearby-places.webp" data-lightbox data-caption="รายการสถานที่รอบมหาวิทยาลัย"><img src="../assets/projects/utcc-nearby-places.webp" width="1600" height="763" loading="lazy" alt="รายการสถานที่รอบมหาวิทยาลัยแบ่งตามหมวดหมู่"></a>
+          <figcaption><strong>สถานที่รอบมหาวิทยาลัย</strong>กรองตามหมวดหมู่ และดูรีวิวกับคะแนน</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/utcc-search.webp" data-lightbox data-caption="ผลการค้นหาสถานที่"><img src="../assets/projects/utcc-search.webp" width="1600" height="768" loading="lazy" alt="หน้าผลการค้นหาสถานที่"></a>
+          <figcaption><strong>ค้นหา</strong>ผลการค้นหาสถานที่จากคำค้น</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/utcc-settings.webp" data-lightbox data-caption="หน้าตั้งค่า: ภาษา รูปแบบการแสดงผล และ Dark Mode"><img src="../assets/projects/utcc-settings.webp" width="1600" height="768" loading="lazy" alt="หน้าตั้งค่าภาษาและการแสดงผล"></a>
+          <figcaption><strong>ตั้งค่า</strong>เปลี่ยนภาษาไทย/อังกฤษ และรูปแบบการแสดงผล</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/utcc-dark.webp" data-lightbox data-caption="การแสดงผลแบบ Dark Mode"><img src="../assets/projects/utcc-dark.webp" width="1600" height="774" loading="lazy" alt="เว็บ UTCC RECOM ในโหมดมืด"></a>
+          <figcaption><strong>Dark Mode</strong>ทั้งเว็บรองรับโหมดมืด</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="features-title">
+      <h2 id="features-title" data-reveal>Features &amp; testing</h2>
+      <ul class="detail-list" data-reveal>
+        <li>ค้นหาและกรองสถานที่ตามหมวดหมู่</li>
+        <li>เพิ่ม แก้ไข และลบข้อมูลสถานที่</li>
+        <li>รีวิวและให้คะแนนสถานที่ พร้อม AI สรุปรีวิว</li>
+        <li>AI chatbot ช่วยหาสถานที่</li>
+        <li>รองรับภาษาไทย/อังกฤษ และ Dark Mode</li>
+        <li>งาน QA: Manual Test Cases, API Testing, Bug Reports, Regression Checklist และ Test Summary</li>
+      </ul>
+    </section>
+
+    <a class="next-project" href="flyfood.html" data-reveal>
+      <span>Next project</span>
+      <strong>FlyFood →</strong>
+    </a>
+    <div class="detail-footer-gap"></div>
+  </main>
+
+  <dialog class="lightbox" aria-label="ภาพขยาย">
+    <button class="lightbox__close" type="button" aria-label="ปิดภาพขยาย">✕</button>
+    <figure><img alt=""><figcaption></figcaption></figure>
+  </dialog>
+
+  <footer class="footer">
+    <p class="footer__name" aria-hidden="true">Bavonvit Surin</p>
+    <p class="footer__copy">© 2026 Bavonvit Surin</p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script defer src="../main.js"></script>
+</body>
+</html>

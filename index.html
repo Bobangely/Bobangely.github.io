@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="th" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bavonvit Surin — Portfolio</title>
+  <meta name="description" content="สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาลัยหอการค้าไทย กำลังหาที่ฝึกงานสาย AI Engineer">
+  <meta property="og:title" content="Bavonvit Surin — Portfolio">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bobangely.github.io/">
+  <meta property="og:image" content="https://bobangely.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="AI Engineer · Computer Vision — ผลงาน YOLO อ่านอักษรเบรลล์, Full-stack Web และ Android">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap"></noscript>
+  <link rel="preload" as="image" href="assets/avatar.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__name" href="#top">Bavonvit<span class="mark" aria-hidden="true"></span></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--small" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <figure class="hero__portrait" data-hero-fade>
+        <div class="portrait__frame">
+          <img src="assets/avatar.webp" width="1024" height="1536" alt="ภาพการ์ตูนของบวรวิชญ์ สุรินทร์ ใส่เสื้อเชิ้ตขาวผูกเนคไทสีดำ">
+          <!-- a YOLO-style detection box around the face: the page's signature -->
+          <div class="detect" aria-hidden="true">
+            <span class="detect__label"><span class="detect__name">bavonvit</span> <span data-confidence>0.99</span></span>
+          </div>
+        </div>
+      </figure>
+
+      <div class="hero__text">
+        <h1 class="hero__name">
+          <span class="line"><span data-hero-word>Bavonvit</span></span>
+          <span class="line"><span data-hero-word>Surin</span></span>
+        </h1>
+        <p class="hero__role" data-hero-fade>AI Engineer · Computer Vision</p>
+        <p class="hero__intro" data-hero-fade>สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาวิทยาลัยหอการค้าไทย กำลังหาที่ฝึกงานสาย AI Engineer</p>
+        <dl class="hero__facts" data-hero-fade>
+          <div><dt>Internship</dt><dd>เริ่ม 11 มกราคม 2570</dd></div>
+          <div><dt>Study</dt><dd>Computer Science ปี 4 · UTCC</dd></div>
+          <div><dt>GPAX</dt><dd>3.58</dd></div>
+          <div><dt>Focus</dt><dd>YOLO · Object detection · Dataset</dd></div>
+        </dl>
+        <div class="hero__actions" data-hero-fade>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="link" href="https://github.com/Bobangely" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <div class="section-head" data-reveal>
+        <h2 id="projects-title">Projects</h2>
+        <p>งานหลักคือ Computer Vision ด้วย YOLO ตามด้วยงาน Full-stack และ Mobile ทุกงานอยู่ที่ GitHub</p>
+      </div>
+
+      <article class="project project--braille" data-reveal>
+        <figure class="project__media" data-parallax data-scan data-label="braille-scanner 0.97" style="view-transition-name: vt-braille">
+          <a class="project__media-link" href="projects/braille.html" tabindex="-1" aria-hidden="true"><img src="assets/projects/braille-detection.webp" width="1428" height="926" loading="lazy" alt="หน้าจอสแกนเนอร์ตรวจจับเซลล์เบรลล์จากกล้องจริง พร้อมข้อความภาษาไทยที่ถอดรหัสได้"></a>
+        </figure>
+        <div class="project__body">
+          <h3>Braille-to-Speech Scanner</h3>
+          <p class="project__meta">Computer Vision / AI · Team project · 2026</p>
+          <p>ต้นแบบระบบอ่านอักษรเบรลล์ไทย/อังกฤษจากกล้อง แปลงเป็นข้อความและเสียงพูด ให้ครูและผู้ปกครองที่อ่านเบรลล์ไม่เป็นตรวจเนื้อหาได้ทันที เป็นงานทีมที่แบ่งงานกันทำ โดยผมร่วมทำทุกส่วนของระบบ ตั้งแต่ dataset และโมเดล YOLO ไปจนถึงตัวถอดรหัสและเสียงพูด</p>
+          <ul class="project__points">
+            <li>เตรียม dataset และ annotate ด้วย Roboflow แล้วเทรนโมเดล YOLO</li>
+            <li>ตรวจจับจุดสีด้วย OpenCV (HSV) และจัดกริดเซลล์ 2×3</li>
+            <li>ติดตามข้ามเฟรมด้วย optical flow และยืนยันผลหลายเฟรม</li>
+            <li>ถอดรหัสเบรลล์ไทย/อังกฤษ และอ่านออกเสียงด้วย Piper / Edge TTS</li>
+            <li>หน้าจอสแกนเนอร์ และ automated tests ตรวจการ detect และ decode</li>
+          </ul>
+          <p class="project__stack">Python · YOLO · Roboflow · OpenCV · Git/GitHub</p>
+          <div class="more">
+            <a class="btn" href="projects/braille.html">ดูรายละเอียด →</a>
+            <a class="link" href="https://github.com/Bobangely/Braille-to-Speech-Scanner" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project__side">
+          <div class="pipeline-box">
+            <h4>How it works</h4>
+            <ol class="pipeline">
+              <li>กล้องจับภาพจุดเบรลล์ที่แต้มสี</li>
+              <li>YOLO และ OpenCV ตรวจจับจุด แล้วจัดเป็นเซลล์ 2×3</li>
+              <li>ติดตามข้ามเฟรมและยืนยันผลหลายเฟรม</li>
+              <li>ถอดรหัสเป็นข้อความไทย/อังกฤษ แล้วอ่านออกเสียง</li>
+            </ol>
+          </div>
+          <div class="try">
+            <h4>Try it: พิมพ์ภาษาอังกฤษ แล้วดูเป็นอักษรเบรลล์</h4>
+            <label class="try__label" for="braille-input" hidden>ข้อความภาษาอังกฤษ (a–z)</label>
+            <input id="braille-input" class="try__input" type="text" maxlength="16" value="hello" autocomplete="off" spellcheck="false" hidden>
+            <div class="braille braille--try" data-braille-output aria-live="polite">⠓⠑⠇⠇⠕</div>
+            <p class="try__note">จุดสีน้ำเงินคือสิ่งที่สแกนเนอร์มองหา ระบบจริงอ่านจุดที่แต้มสีแบบนี้จากกล้อง</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="project-pair">
+        <article class="project project--small" data-reveal>
+          <a class="project__media-link" href="projects/utcc.html" tabindex="-1" aria-hidden="true">
+            <figure class="project__media project__media--tone" data-parallax data-scan data-label="utcc-recom 0.95" style="view-transition-name: vt-utcc">
+              <img src="assets/projects/utcc-home.webp" width="1600" height="770" loading="lazy" alt="หน้าแรกของเว็บ UTCC RECOM ค้นหาสถานที่รอบมหาวิทยาลัยหอการค้าไทย">
+            </figure>
+          </a>
+          <h3>UTCC RECOM</h3>
+          <p class="project__meta">Recommendation Website · Full-stack · 2025–2026</p>
+          <p>เว็บแนะนำอาคารและสถานที่ในมหาวิทยาลัยหอการค้าไทยและรอบมหาวิทยาลัย พร้อมแผนที่ รีวิว และ AI chatbot</p>
+          <ul class="project__points">
+            <li>ค้นหา กรองตามหมวดหมู่ และอัปเดตเนื้อหาด้วย JavaScript ดึงข้อมูลจาก REST API</li>
+            <li>สร้าง REST API ด้วย Spring Boot เชื่อม PostgreSQL บน Supabase</li>
+            <li>เขียน manual test cases และ API checks ตรวจการทำงานและบันทึก defect</li>
+          </ul>
+          <p class="project__stack">JavaScript · Java · Spring Boot · PostgreSQL/Supabase</p>
+          <div class="more">
+            <a class="btn" href="projects/utcc.html">ดูรายละเอียด →</a>
+            <a class="link" href="https://github.com/Bobangely/UTCC_RECOM" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project project--small" data-reveal>
+          <a class="project__media-link" href="projects/flyfood.html" tabindex="-1" aria-hidden="true">
+            <figure class="project__media project__media--tone phones" data-parallax data-scan data-label="flyfood 0.93" style="view-transition-name: vt-flyfood">
+              <img src="assets/projects/flyfood-home.webp" width="390" height="771" loading="lazy" alt="หน้าหลักแอป FlyFood แสดงเมนูอาหารยอดนิยม">
+              <img src="assets/projects/flyfood-promotion.webp" width="374" height="769" loading="lazy" alt="หน้าโปรโมชั่นของแอป FlyFood">
+              <img src="assets/projects/flyfood-takeaway.webp" width="408" height="776" loading="lazy" alt="หน้าสั่งกลับบ้านของแอป FlyFood">
+            </figure>
+          </a>
+          <h3>FlyFood</h3>
+          <p class="project__meta">Android Food Ordering · 2024–2025</p>
+          <p>แอปสั่งอาหารบน Android มีเมนู โปรโมชั่น และตะกร้าสินค้า เก็บข้อมูลในเครื่องด้วย SQLite</p>
+          <ul class="project__points">
+            <li>หลายหน้าจอเชื่อมกันด้วย Activity และ Intent</li>
+            <li>ระบบตะกร้าและคำนวณราคา</li>
+            <li>UI animation และ custom drawable</li>
+          </ul>
+          <p class="project__stack">Kotlin · Android Studio · XML · SQLite</p>
+          <div class="more">
+            <a class="btn" href="projects/flyfood.html">ดูรายละเอียด →</a>
+            <a class="link" href="https://github.com/Bobangely/android-food-ordering-app" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title" data-reveal>About</h2>
+      <div class="about__text" data-reveal>
+        <p class="about__statement">ผมสนใจเส้นทาง AI Engineer เป็นหลัก โดยเฉพาะงาน Computer Vision ที่ใช้งานได้จริง</p>
+        <p class="about__body">ผมเคยร่วมทำระบบอ่านอักษรเบรลล์จากกล้องตั้งแต่ต้นจนจบ ทั้งเตรียมและ annotate dataset ด้วย Roboflow เทรนโมเดล YOLO ตรวจจับจุดด้วย OpenCV ไปจนถึงตัวถอดรหัสภาษาไทยและระบบอ่านออกเสียง นอกจากนี้ยังเคยสร้าง REST API ด้วย Spring Boot เชื่อม PostgreSQL บน Supabase และได้ร่วมงานกับเพื่อนในทีมที่พัฒนา AI chatbot ด้วย Gemini API ทำให้เห็นขั้นตอนการนำ LLM มาเชื่อมกับระบบจริง ตอนนี้ผมกำลังมองหาที่ฝึกงานสหกิจด้าน AI Engineering เพื่อเรียนรู้จากทีมที่มีประสบการณ์ และนำทักษะเหล่านี้ไปช่วยงานจริง</p>
+      </div>
+      <dl class="facts" data-reveal>
+        <div><dt>University</dt><dd>มหาวิทยาลัยหอการค้าไทย (UTCC) 2023–2027</dd></div>
+        <div><dt>Major</dt><dd>วิทยาการคอมพิวเตอร์ (Computer Science) ปี 4</dd></div>
+        <div><dt>Coursework</dt><dd>Artificial Intelligence, Software Engineering, Database, Data Structures, Web, Mobile</dd></div>
+        <div><dt>Looking for</dt><dd>ฝึกงานสหกิจสาย AI Engineer / Computer Vision เริ่ม 11 มกราคม 2570</dd></div>
+      </dl>
+    </section>
+
+    <section id="skills" class="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title" data-reveal>Skills</h2>
+      <div class="skills__groups">
+        <div class="skills__group" data-reveal><h3>AI &amp; Computer Vision</h3><ul data-stagger><li>YOLO</li><li>Object detection</li><li>Model training</li><li>Dataset preparation</li><li>Image annotation</li></ul></div>
+        <div class="skills__group" data-reveal><h3>Languages</h3><ul data-stagger><li>Python</li><li>JavaScript</li><li>Java</li><li>Kotlin</li></ul></div>
+        <div class="skills__group" data-reveal><h3>Tools</h3><ul data-stagger><li>Roboflow</li><li>Git</li><li>GitHub</li><li>Postman</li><li>Android Studio</li></ul></div>
+        <div class="skills__group" data-reveal><h3>Back-End &amp; APIs</h3><ul data-stagger><li>Spring Boot</li><li>REST APIs</li></ul></div>
+        <div class="skills__group" data-reveal><h3>Databases</h3><ul data-stagger><li>PostgreSQL</li><li>Supabase</li><li>SQLite</li></ul></div>
+        <div class="skills__group" data-reveal><h3>Web</h3><ul data-stagger><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" data-reveal>Let’s build AI that works.</h2>
+      <p data-reveal>ถ้าทีมของคุณรับนักศึกษาฝึกงานสาย AI Engineer หรือ Computer Vision โปรดรับผมและชี้แนวทางการทำงานให้ผมด้วยครับ</p>
+      <a class="contact__email" href="mailto:bavonvit99@gmail.com?subject=Internship%20opportunity" data-reveal>bavonvit99@gmail.com</a>
+      <div class="contact__links" data-reveal>
+        <a class="btn" href="assets/resume.pdf" download="Bavonvit-Surin-Resume.pdf">Download Resume</a>
+        <a class="link" href="https://github.com/Bobangely" target="_blank" rel="noopener">github.com/Bobangely ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__name" aria-hidden="true">Bavonvit Surin</p>
+    <p class="footer__copy">© 2026 Bavonvit Surin</p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script defer src="main.js"></script>
+</body>
+</html>
