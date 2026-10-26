@@ -68,34 +68,40 @@
     byId.forEach((a, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
   }
 
-  // Project filter: ?role=dev|ai|mobile|testing shows only the projects for that internship track
-  const filter = document.querySelector('.filter');
-  if (filter) {
-    const roles = ['all', 'dev', 'ai', 'mobile', 'testing'];
-    const projects = [...document.querySelectorAll('.project[data-roles]')];
-    const apply = role => {
-      if (!roles.includes(role)) role = 'all';
-      projects.forEach(p => { p.hidden = role !== 'all' && !p.dataset.roles.split(' ').includes(role); });
-      filter.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === role)));
+  // Project picker: a button moves its project to the top; the others stay below in order.
+  // ?project=braille|utcc|flyfood opens the page with that project first.
+  const picker = document.querySelector('.tabs');
+  if (picker) {
+    const buttons = [...picker.querySelectorAll('button')];
+    const original = buttons.map(b => document.getElementById('project-' + b.dataset.project));
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const bringFirst = (key, { initial = false } = {}) => {
+      const chosen = document.getElementById('project-' + key);
+      if (!chosen) return;
+      // chosen first, the rest keep their original order
+      const order = [chosen, ...original.filter(p => p !== chosen)];
+      order.forEach(p => picker.parentNode.append(p));
+      buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.project === key)));
+      if (initial) return;
       const url = new URL(location.href);
-      if (role === 'all') url.searchParams.delete('role'); else url.searchParams.set('role', role);
+      url.searchParams.set('project', key);
       history.replaceState(null, '', url);
-      // hidden cards change the page height, so scroll-driven animations must re-measure
+      if (!calm && window.gsap) {
+        gsap.fromTo(chosen, { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', clearProps: 'transform,opacity' });
+      }
+      // project positions changed, so scroll-driven animations must re-measure
       if (window.ScrollTrigger) ScrollTrigger.refresh();
     };
-    const toProjects = () => {
-      const target = document.getElementById('projects');
-      if (lenis) lenis.scrollTo(target); else target.scrollIntoView();
-    };
-    filter.hidden = false;
-    filter.addEventListener('click', e => { const b = e.target.closest('button'); if (b) apply(b.dataset.filter); });
-    document.querySelectorAll('[data-role-link]').forEach(a => a.addEventListener('click', e => {
-      e.preventDefault();
-      apply(a.dataset.roleLink);
-      toProjects();
-    }));
-    const initial = new URLSearchParams(location.search).get('role');
-    if (initial) { apply(initial); requestAnimationFrame(toProjects); }
+    picker.addEventListener('click', e => { const b = e.target.closest('button'); if (b) bringFirst(b.dataset.project); });
+    picker.hidden = false;
+    const wanted = new URLSearchParams(location.search).get('project');
+    if (wanted && document.getElementById('project-' + wanted)) {
+      bringFirst(wanted, { initial: true });
+      requestAnimationFrame(() => {
+        const target = document.getElementById('projects');
+        if (lenis) lenis.scrollTo(target); else target.scrollIntoView();
+      });
+    }
   }
 
   // Gallery lightbox: each [data-lightbox] link points at its full image, so without JS it still opens the picture

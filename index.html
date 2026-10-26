@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bavonvit Surin — Portfolio</title>
-  <meta name="description" content="สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาลัยหอการค้าไทย สร้างระบบ AI เว็บ และแอปมือถือ พร้อมทดสอบงาน กำลังหาที่ฝึกงานสหกิจ">
+  <meta name="description" content="สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาลัยหอการค้าไทย กำลังมองหาที่ฝึกงานสหกิจ">
   <meta property="og:title" content="Bavonvit Surin — Portfolio">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
@@ -50,7 +50,7 @@
           <span class="line"><span data-hero-word>Surin</span></span>
         </h1>
         <p class="hero__role" data-hero-fade>Software Developer · AI · Mobile · QA Tester</p>
-        <p class="hero__intro" data-hero-fade>สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาวิทยาลัยหอการค้าไทย สร้างได้ทั้งระบบ AI เว็บ และแอปมือถือ พร้อมทดสอบให้แน่ใจว่าทำงานถูกต้อง กำลังหาที่ฝึกงานสหกิจ</p>
+        <p class="hero__intro" data-hero-fade>สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาวิทยาลัยหอการค้าไทย กำลัมองหาที่ฝึกงานสหกิจ</p>
         <dl class="hero__facts" data-hero-fade>
           <div><dt>Internship</dt><dd>เริ่ม 11 มกราคม 2570</dd></div>
           <div><dt>Study</dt><dd>Computer Science ปี 4 · UTCC</dd></div>
@@ -64,46 +64,18 @@
       </div>
     </section>
 
-    <section id="roles" class="roles" aria-labelledby="roles-title">
-      <h2 id="roles-title" data-reveal>What I can do</h2>
-      <div class="roles__grid">
-        <a class="role" href="?role=dev#projects" data-role-link="dev" data-reveal>
-          <h3>Software Developer</h3>
-          <p>สร้าง REST API ด้วย Spring Boot เชื่อม PostgreSQL บน Supabase และหน้าเว็บ JavaScript ที่ดึงข้อมูลจาก API</p>
-          <span class="role__more">UTCC RECOM · Braille Scanner →</span>
-        </a>
-        <a class="role" href="?role=ai#projects" data-role-link="ai" data-reveal>
-          <h3>AI Engineer</h3>
-          <p>เตรียมและ annotate dataset ด้วย Roboflow เทรนโมเดล YOLO และใช้ OpenCV ต่อกับตัวถอดรหัสเบรลล์และเสียงพูด</p>
-          <span class="role__more">Braille Scanner · UTCC RECOM →</span>
-        </a>
-        <a class="role" href="?role=mobile#projects" data-role-link="mobile" data-reveal>
-          <h3>Mobile Developer</h3>
-          <p>แอป Android ด้วย Kotlin หลายหน้าจอ เก็บข้อมูลด้วย SQLite มีระบบตะกร้าและคำนวณราคา</p>
-          <span class="role__more">FlyFood →</span>
-        </a>
-        <a class="role" href="?role=testing#projects" data-role-link="testing" data-reveal>
-          <h3>QA Tester</h3>
-          <p>เขียน manual test cases, API checks และ bug reports ใน UTCC RECOM และทดสอบการทำงานของระบบ Braille Scanner</p>
-          <span class="role__more">UTCC RECOM · Braille Scanner →</span>
-        </a>
-      </div>
-    </section>
-
     <section id="projects" class="projects" aria-labelledby="projects-title">
       <div class="section-head" data-reveal>
         <h2 id="projects-title">Projects</h2>
-        <p>งานที่ครอบคลุม Software Development, AI, Mobile และ Testing ทุกงานอยู่ที่ GitHub เลือกสายงานเพื่อดูเฉพาะงานที่เกี่ยวข้อง</p>
+        <p> ทุกผลงานอยู่ที่ GitHub เลือกชมผลงานได้เลย </p>
       </div>
-      <div class="filter" role="group" aria-label="กรองโปรเจกต์ตามสายงาน" hidden>
-        <button type="button" data-filter="all" aria-pressed="true">ทั้งหมด</button>
-        <button type="button" data-filter="dev" aria-pressed="false">Software Dev</button>
-        <button type="button" data-filter="ai" aria-pressed="false">AI</button>
-        <button type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
-        <button type="button" data-filter="testing" aria-pressed="false">Testing</button>
+      <div class="tabs" role="group" aria-label="เลือกผลงานที่จะแสดงเป็นอันดับแรก" hidden>
+        <button type="button" data-project="braille" aria-pressed="true">Braille-to-Speech Scanner</button>
+        <button type="button" data-project="utcc" aria-pressed="false">UTCC RECOM</button>
+        <button type="button" data-project="flyfood" aria-pressed="false">FlyFood</button>
       </div>
 
-      <article class="project project--braille" data-roles="ai dev testing" data-reveal>
+      <article class="project project--row project--braille" id="project-braille">
         <figure class="project__media" data-parallax data-scan data-label="braille-scanner 0.97" style="view-transition-name: vt-braille">
           <a class="project__media-link" href="projects/braille.html" tabindex="-1" aria-hidden="true"><img src="assets/projects/braille-detection.webp" width="1428" height="926" loading="lazy" alt="หน้าจอสแกนเนอร์ตรวจจับเซลล์เบรลล์จากกล้องจริง พร้อมข้อความภาษาไทยที่ถอดรหัสได้"></a>
         </figure>
@@ -145,13 +117,13 @@
         </div>
       </article>
 
-      <div class="project-pair">
-        <article class="project project--small" data-roles="dev testing ai" data-reveal>
-          <a class="project__media-link" href="projects/utcc.html" tabindex="-1" aria-hidden="true">
-            <figure class="project__media project__media--tone" data-parallax data-scan data-label="utcc-recom 0.95" style="view-transition-name: vt-utcc">
-              <img src="assets/projects/utcc-home.webp" width="1600" height="770" loading="lazy" alt="หน้าแรกของเว็บ UTCC RECOM ค้นหาสถานที่รอบมหาวิทยาลัยหอการค้าไทย">
-            </figure>
-          </a>
+      <article class="project project--row" id="project-utcc">
+        <a class="project__media-link" href="projects/utcc.html" tabindex="-1" aria-hidden="true">
+          <figure class="project__media project__media--tone" data-parallax data-scan data-label="utcc-recom 0.95" style="view-transition-name: vt-utcc">
+            <img src="assets/projects/utcc-home.webp" width="1600" height="770" loading="lazy" alt="หน้าแรกของเว็บ UTCC RECOM ค้นหาสถานที่รอบมหาวิทยาลัยหอการค้าไทย">
+          </figure>
+        </a>
+        <div class="project__body">
           <h3>UTCC RECOM</h3>
           <p class="project__meta">Recommendation Website · Full-stack · 2025–2026</p>
           <p class="project__roles">Software Dev · Testing · AI</p>
@@ -166,16 +138,17 @@
             <a class="btn" href="projects/utcc.html">ดูรายละเอียด →</a>
             <a class="link" href="https://github.com/Bobangely/UTCC_RECOM" target="_blank" rel="noopener">View on GitHub ↗</a>
           </div>
-        </article>
-
-        <article class="project project--small" data-roles="mobile dev" data-reveal>
-          <a class="project__media-link" href="projects/flyfood.html" tabindex="-1" aria-hidden="true">
-            <figure class="project__media project__media--tone phones" data-parallax data-scan data-label="flyfood 0.93" style="view-transition-name: vt-flyfood">
-              <img src="assets/projects/flyfood-home.webp" width="390" height="771" loading="lazy" alt="หน้าหลักแอป FlyFood แสดงเมนูอาหารยอดนิยม">
-              <img src="assets/projects/flyfood-promotion.webp" width="374" height="769" loading="lazy" alt="หน้าโปรโมชั่นของแอป FlyFood">
-              <img src="assets/projects/flyfood-takeaway.webp" width="408" height="776" loading="lazy" alt="หน้าสั่งกลับบ้านของแอป FlyFood">
-            </figure>
-          </a>
+        </div>
+      </article>
+      <article class="project project--row" id="project-flyfood">
+        <a class="project__media-link" href="projects/flyfood.html" tabindex="-1" aria-hidden="true">
+          <figure class="project__media project__media--tone phones" data-parallax data-scan data-label="flyfood 0.93" style="view-transition-name: vt-flyfood">
+            <img src="assets/projects/flyfood-home.webp" width="390" height="771" loading="lazy" alt="หน้าหลักแอป FlyFood แสดงเมนูอาหารยอดนิยม">
+            <img src="assets/projects/flyfood-promotion.webp" width="374" height="769" loading="lazy" alt="หน้าโปรโมชั่นของแอป FlyFood">
+            <img src="assets/projects/flyfood-takeaway.webp" width="408" height="776" loading="lazy" alt="หน้าสั่งกลับบ้านของแอป FlyFood">
+          </figure>
+        </a>
+        <div class="project__body">
           <h3>FlyFood</h3>
           <p class="project__meta">Android Food Ordering · 2024–2025</p>
           <p class="project__roles">Mobile · Software Dev</p>
@@ -190,15 +163,16 @@
             <a class="btn" href="projects/flyfood.html">ดูรายละเอียด →</a>
             <a class="link" href="https://github.com/Bobangely/android-food-ordering-app" target="_blank" rel="noopener">View on GitHub ↗</a>
           </div>
-        </article>
-      </div>
+        </div>
+      </article>
     </section>
 
     <section id="about" class="about" aria-labelledby="about-title">
       <h2 id="about-title" data-reveal>About</h2>
       <div class="about__text" data-reveal>
-        <p class="about__statement">ผมชอบสร้างซอฟต์แวร์ที่ใช้งานได้จริง และทดสอบจนแน่ใจว่ามันทำงานถูกต้อง</p>
-        <p class="about__body">ผมเคยร่วมทำระบบอ่านอักษรเบรลล์จากกล้องตั้งแต่ต้นจนจบ ทั้งเตรียม dataset ด้วย Roboflow เทรนโมเดล YOLO ใช้ OpenCV ไปจนถึงตัวถอดรหัสภาษาไทยและเสียงพูด สร้าง REST API ด้วย Spring Boot เชื่อม PostgreSQL บน Supabase พร้อมเขียน test cases และ API checks ตรวจงาน ได้ร่วมงานกับเพื่อนในทีมที่ต่อ Gemini API ทำ AI chatbot และทำแอป Android ด้วย Kotlin กับ SQLite ตอนนี้ผมกำลังมองหาที่ฝึกงานสหกิจสาย Software Developer, AI Engineer, Mobile Developer หรือ QA Tester เพื่อเรียนรู้จากทีมที่มีประสบการณ์ และนำทักษะเหล่านี้ไปช่วยงานจริง</p>
+        <p class="about__statement">ผมชอบลงมือสร้างของที่ใช้งานได้จริง และอยากเรียนรู้ว่างานจริงในทีมทำกันอย่างไร</p>
+        <p class="about__body">ระหว่างเรียนผมได้ลองทำงานหลายด้าน ทั้งระบบอ่านอักษรเบรลล์จากกล้องที่ใช้ AI เว็บแนะนำสถานที่ที่มี Back-end และฐานข้อมูล 
+          และแอปสั่งอาหารบน Android ทุกงานผมทดสอบให้มั่นใจว่าทำงานถูกต้องก่อนส่ง อยากใช้การฝึกงานสหกิจครั้งนี้เรียนรู้จากทีมที่มีประสบการณ์ พร้อมช่วยงานได้ทั้งด้าน Software Development, AI, Mobile และ Testing</p>
       </div>
       <dl class="facts" data-reveal>
         <div><dt>University</dt><dd>มหาวิทยาลัยหอการค้าไทย (UTCC) 2023–2027</dd></div>

@@ -196,7 +196,14 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
 
 /* Featured: wide picture, then text beside the pipeline and live demo */
 /* Featured: picture left with the details beside it, pipeline and live demo side by side underneath */
-.project--braille { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 64px); align-items: start; }
+.project--row { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 64px); align-items: center; }
+.project--row + .project--row { margin-top: var(--gap-section); }
+/* every other project (by current order) puts its picture on the right */
+.project--row:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
+/* explicit cells, not order: Braille has a third full-width row that order would push the picture below */
+.project--row:nth-of-type(even) > :first-child { grid-column: 2; grid-row: 1; }
+.project--row:nth-of-type(even) > .project__body { grid-column: 1; grid-row: 1; }
+.project--braille { align-items: start; }
 .project__side { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
 .pipeline-box, .try { padding: clamp(24px, 3vw, 36px); border-radius: 24px; background: var(--bg-2); }
 .pipeline-box h4, .try h4 { font-size: clamp(1.2rem, 1.7vw, 1.5rem); letter-spacing: -0.02em; line-height: 1.2; }
@@ -215,16 +222,14 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
 }
 .try__note { margin-top: 18px; font-size: .95rem; color: var(--muted); }
 
-/* Secondary projects side by side */
-.project-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 5vw, 72px); margin-top: var(--gap-section); }
-.project--small h3 { margin-top: 28px; font-size: clamp(1.8rem, 3vw, 2.75rem); }
 .project__media--tone { background: var(--bg-2); padding: clamp(16px, 3vw, 40px); aspect-ratio: 16 / 11; display: flex; align-items: center; }
 .project__media--tone img { border-radius: 10px; }
 .phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(8px, 1.5vw, 20px); align-items: center; }
 .phones img { width: 100%; max-height: 100%; object-fit: contain; border-radius: 0; }
 
 @media (max-width: 860px) {
-  .project--braille, .project-pair, .project__side { grid-template-columns: minmax(0, 1fr); }
+  .project--row, .project--row:nth-of-type(even), .project__side { grid-template-columns: minmax(0, 1fr); }
+  .project--row:nth-of-type(even) > :first-child, .project--row:nth-of-type(even) > .project__body { grid-column: auto; grid-row: auto; }
 }
 
 /* About */
@@ -409,27 +414,14 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
   .nav__links a[href$="#about"], .nav__links a[href$="#skills"] { display: none; }
 }
 
-/* What I can do: one box per internship track, each opens the matching project filter */
-.roles { padding: var(--gap-section) var(--margin) 0; }
-.roles__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: clamp(40px, 5vw, 72px); }
-.role { display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 2.4vw, 32px); border-radius: 24px; background: var(--bg-2); text-decoration: none; transition: background-color .25s var(--ease-out), transform .25s var(--ease-out); }
-.role:nth-child(2) { background: var(--accent-soft); }
-.role h3 { font-size: clamp(1.3rem, 1.7vw, 1.6rem); letter-spacing: -0.02em; }
-.role p { flex: 1; }
-.role__more { font-weight: 600; color: var(--accent); }
-.role:hover { transform: translateY(-4px); background: var(--accent-soft); }
-@media (max-width: 1100px) { .roles__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .roles__grid { grid-template-columns: minmax(0, 1fr); } }
-
-/* Project filter */
-.filter { display: flex; flex-wrap: wrap; gap: 10px; margin: calc(clamp(48px, 6vw, 96px) * -0.5) 0 clamp(40px, 5vw, 72px); }
-.filter button { min-height: 44px; padding: 0 20px; border: 2px solid var(--accent); border-radius: 999px; background: var(--bg); color: var(--accent); font: 600 1rem var(--font-text); cursor: pointer; transition: background-color .2s var(--ease-out), color .2s var(--ease-out); }
-.filter button:hover { background: var(--accent-soft); }
-.filter button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+/* Project tabs */
+.tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: calc(clamp(48px, 6vw, 96px) * -0.5) 0 clamp(40px, 5vw, 72px); }
+.tabs button { min-height: 44px; padding: 0 20px; border: 2px solid var(--accent); border-radius: 999px; background: var(--bg); color: var(--accent); font: 600 1rem var(--font-text); cursor: pointer; transition: background-color .2s var(--ease-out), color .2s var(--ease-out); }
+.tabs button:hover { background: var(--accent-soft); }
+.tabs button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
 .project__roles { margin-top: 6px; font-weight: 600; color: var(--accent); }
-.project[hidden] { display: none; }
-.project--braille[hidden] + .project-pair { margin-top: 0; }
-/* a single visible project in the pair takes the full width */
-.project-pair:not(:has(> .project:not([hidden]) ~ .project:not([hidden]))) { grid-template-columns: minmax(0, 1fr); }
-.project-pair:not(:has(> .project:not([hidden]) ~ .project:not([hidden]))) .project__media--tone { aspect-ratio: 21 / 9; }
 .project__roles + p { margin-top: 16px; max-width: 34em; }
+
+/* Touch targets: text links get a 44px tall hit area without changing how the text looks */
+.nav__name, .nav__links a, .link, .back, .contact__email { display: inline-flex; align-items: center; min-height: 44px; }
+.nav__links a::after { bottom: 6px; }
