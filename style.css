@@ -225,7 +225,7 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
 .project__media--tone { background: var(--bg-2); padding: clamp(16px, 3vw, 40px); aspect-ratio: 16 / 11; display: flex; align-items: center; }
 .project__media--tone img { border-radius: 10px; }
 .phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(8px, 1.5vw, 20px); align-items: center; }
-.phones img { width: 100%; max-height: 100%; object-fit: contain; border-radius: 0; }
+.phones img { width: 100%; max-height: 100%; object-fit: contain; border-radius: 14px; }
 
 @media (max-width: 860px) {
   .project--row, .project--row:nth-of-type(even), .project__side { grid-template-columns: minmax(0, 1fr); }
@@ -425,3 +425,6 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
 /* Touch targets: text links get a 44px tall hit area without changing how the text looks */
 .nav__name, .nav__links a, .link, .back, .contact__email { display: inline-flex; align-items: center; min-height: 44px; }
 .nav__links a::after { bottom: 6px; }
+
+/* FlyFood screens are bare captures, so round them like a phone screen */
+.gallery--phones .shot img { border-radius: 16px; }
