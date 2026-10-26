@@ -250,7 +250,7 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
 
 /* Contact + footer */
 .contact { padding-bottom: var(--gap-section); }
-.contact h2 { font-size: clamp(2.6rem, 7.4vw, 7.5rem); max-width: 12em; }
+.contact h2 { font-size: clamp(1.6rem, 7.4vw, 7.5rem); max-width: 12em; }
 .contact > p { margin-top: 24px; max-width: 32em; font-size: 1.15rem; }
 .contact__email {
   display: inline-block;
@@ -281,7 +281,7 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
 .detail-hero { padding: clamp(24px, 4vw, 56px) var(--margin) 0; }
 .back { display: inline-block; margin-bottom: clamp(24px, 4vw, 48px); font-weight: 600; text-decoration: none; color: var(--muted); transition: color .2s var(--ease-out); }
 .back:hover { color: var(--accent); }
-.detail-hero h1 { font-size: clamp(2.8rem, 8vw, 8rem); letter-spacing: -0.045em; max-width: 12em; }
+.detail-hero h1 { font-size: clamp(2.3rem, 8vw, 8rem); letter-spacing: -0.045em; max-width: 12em; }
 .detail-hero .project__meta { margin-top: 16px; font-size: 1.1rem; }
 .detail-lead { margin-top: 24px; max-width: 38em; font-size: clamp(1.1rem, 1.5vw, 1.35rem); }
 .detail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 32px; }
@@ -400,3 +400,36 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
   @view-transition { navigation: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; }
 }
+
+/* ---------- Multi-role layer ---------- */
+
+/* Nav without the Resume button: keep two section links visible on phones */
+@media (max-width: 700px) {
+  .nav__links { display: flex; gap: 18px; }
+  .nav__links a[href$="#about"], .nav__links a[href$="#skills"] { display: none; }
+}
+
+/* What I can do: one box per internship track, each opens the matching project filter */
+.roles { padding: var(--gap-section) var(--margin) 0; }
+.roles__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: clamp(40px, 5vw, 72px); }
+.role { display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 2.4vw, 32px); border-radius: 24px; background: var(--bg-2); text-decoration: none; transition: background-color .25s var(--ease-out), transform .25s var(--ease-out); }
+.role:nth-child(2) { background: var(--accent-soft); }
+.role h3 { font-size: clamp(1.3rem, 1.7vw, 1.6rem); letter-spacing: -0.02em; }
+.role p { flex: 1; }
+.role__more { font-weight: 600; color: var(--accent); }
+.role:hover { transform: translateY(-4px); background: var(--accent-soft); }
+@media (max-width: 1100px) { .roles__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .roles__grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Project filter */
+.filter { display: flex; flex-wrap: wrap; gap: 10px; margin: calc(clamp(48px, 6vw, 96px) * -0.5) 0 clamp(40px, 5vw, 72px); }
+.filter button { min-height: 44px; padding: 0 20px; border: 2px solid var(--accent); border-radius: 999px; background: var(--bg); color: var(--accent); font: 600 1rem var(--font-text); cursor: pointer; transition: background-color .2s var(--ease-out), color .2s var(--ease-out); }
+.filter button:hover { background: var(--accent-soft); }
+.filter button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+.project__roles { margin-top: 6px; font-weight: 600; color: var(--accent); }
+.project[hidden] { display: none; }
+.project--braille[hidden] + .project-pair { margin-top: 0; }
+/* a single visible project in the pair takes the full width */
+.project-pair:not(:has(> .project:not([hidden]) ~ .project:not([hidden]))) { grid-template-columns: minmax(0, 1fr); }
+.project-pair:not(:has(> .project:not([hidden]) ~ .project:not([hidden]))) .project__media--tone { aspect-ratio: 21 / 9; }
+.project__roles + p { margin-top: 16px; max-width: 34em; }

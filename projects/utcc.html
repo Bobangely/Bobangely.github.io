@@ -28,7 +28,6 @@
       <a href="../index.html#skills">Skills</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
-    <a class="btn btn--small" href="../assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
   </header>
 
   <main>
@@ -106,15 +105,37 @@
     </section>
 
     <section class="detail-section" aria-labelledby="features-title">
-      <h2 id="features-title" data-reveal>Features &amp; testing</h2>
+      <h2 id="features-title" data-reveal>Features</h2>
       <ul class="detail-list" data-reveal>
         <li>ค้นหาและกรองสถานที่ตามหมวดหมู่</li>
         <li>เพิ่ม แก้ไข และลบข้อมูลสถานที่</li>
         <li>รีวิวและให้คะแนนสถานที่ พร้อม AI สรุปรีวิว</li>
         <li>AI chatbot ช่วยหาสถานที่</li>
         <li>รองรับภาษาไทย/อังกฤษ และ Dark Mode</li>
-        <li>งาน QA: Manual Test Cases, API Testing, Bug Reports, Regression Checklist และ Test Summary</li>
       </ul>
+    </section>
+
+    <section class="detail-section" aria-labelledby="testing-title">
+      <h2 id="testing-title" data-reveal>Testing</h2>
+      <div class="overview" data-reveal>
+        <div>
+          <h3>สิ่งที่ผมทดสอบ</h3>
+          <ul class="project__points">
+            <li>เขียน manual test cases ตามการใช้งานจริงของแต่ละหน้า</li>
+            <li>ตรวจ REST API ด้วย Postman ทั้งกรณีปกติและกรณีผิดพลาด</li>
+            <li>บันทึก defect ที่เจอเป็น bug report</li>
+          </ul>
+        </div>
+        <div>
+          <h3>เอกสาร QA ในโปรเจกต์</h3>
+          <p>Manual Test Cases, API Testing, Bug Reports, Regression Checklist และ Test Summary ผลแต่ละเคสระบุเป็น PASS, FAIL, BLOCKED หรือ NOT RUN</p>
+        </div>
+        <div>
+          <h3>ดูเอกสารจริง</h3>
+          <p>เอกสาร QA ทั้งหมดอยู่ในโฟลเดอร์ <code>qa/</code> ของ repo</p>
+          <a class="link" href="https://github.com/Bobangely/UTCC_RECOM/tree/HEAD/qa" target="_blank" rel="noopener">เปิดเอกสาร QA ↗</a>
+        </div>
+      </div>
     </section>
 
     <a class="next-project" href="flyfood.html" data-reveal>

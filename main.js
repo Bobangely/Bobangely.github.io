@@ -1,4 +1,6 @@
 (() => {
+  let lenis = null; // set later when smooth scrolling starts; the filter scrolls through it when present
+
   // English Grade 1 braille: letter -> raised dots (1-6)
   const DOTS = {
     a: [1], b: [1, 2], c: [1, 4], d: [1, 4, 5], e: [1, 5], f: [1, 2, 4], g: [1, 2, 4, 5],
@@ -66,6 +68,36 @@
     byId.forEach((a, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
   }
 
+  // Project filter: ?role=dev|ai|mobile|testing shows only the projects for that internship track
+  const filter = document.querySelector('.filter');
+  if (filter) {
+    const roles = ['all', 'dev', 'ai', 'mobile', 'testing'];
+    const projects = [...document.querySelectorAll('.project[data-roles]')];
+    const apply = role => {
+      if (!roles.includes(role)) role = 'all';
+      projects.forEach(p => { p.hidden = role !== 'all' && !p.dataset.roles.split(' ').includes(role); });
+      filter.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === role)));
+      const url = new URL(location.href);
+      if (role === 'all') url.searchParams.delete('role'); else url.searchParams.set('role', role);
+      history.replaceState(null, '', url);
+      // hidden cards change the page height, so scroll-driven animations must re-measure
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+    };
+    const toProjects = () => {
+      const target = document.getElementById('projects');
+      if (lenis) lenis.scrollTo(target); else target.scrollIntoView();
+    };
+    filter.hidden = false;
+    filter.addEventListener('click', e => { const b = e.target.closest('button'); if (b) apply(b.dataset.filter); });
+    document.querySelectorAll('[data-role-link]').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      apply(a.dataset.roleLink);
+      toProjects();
+    }));
+    const initial = new URLSearchParams(location.search).get('role');
+    if (initial) { apply(initial); requestAnimationFrame(toProjects); }
+  }
+
   // Gallery lightbox: each [data-lightbox] link points at its full image, so without JS it still opens the picture
   const box = document.querySelector('.lightbox');
   if (box && box.showModal) {
@@ -92,7 +124,7 @@
   gsap.registerPlugin(ScrollTrigger);
 
   if (window.Lenis) {
-    const lenis = new Lenis({ anchors: true });
+    lenis = new Lenis({ anchors: true });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);

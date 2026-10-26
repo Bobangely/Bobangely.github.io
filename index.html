@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bavonvit Surin — Portfolio</title>
-  <meta name="description" content="สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาลัยหอการค้าไทย กำลังหาที่ฝึกงานสาย AI Engineer">
+  <meta name="description" content="สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาลัยหอการค้าไทย สร้างระบบ AI เว็บ และแอปมือถือ พร้อมทดสอบงาน กำลังหาที่ฝึกงานสหกิจ">
   <meta property="og:title" content="Bavonvit Surin — Portfolio">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
@@ -13,7 +13,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:description" content="AI Engineer · Computer Vision — ผลงาน YOLO อ่านอักษรเบรลล์, Full-stack Web และ Android">
+  <meta property="og:description" content="Software Developer · AI · Mobile · QA Tester — ผลงาน YOLO อ่านอักษรเบรลล์, Full-stack Web, Android และงานทดสอบ">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -30,7 +30,6 @@
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn--small" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
   </header>
 
   <main id="top">
@@ -50,13 +49,13 @@
           <span class="line"><span data-hero-word>Bavonvit</span></span>
           <span class="line"><span data-hero-word>Surin</span></span>
         </h1>
-        <p class="hero__role" data-hero-fade>AI Engineer · Computer Vision</p>
-        <p class="hero__intro" data-hero-fade>สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาวิทยาลัยหอการค้าไทย กำลังหาที่ฝึกงานสาย AI Engineer</p>
+        <p class="hero__role" data-hero-fade>Software Developer · AI · Mobile · QA Tester</p>
+        <p class="hero__intro" data-hero-fade>สวัสดีครับ ผมบวรวิชญ์ นักศึกษาวิทยาการคอมพิวเตอร์ ปี 4 มหาวิทยาลัยหอการค้าไทย สร้างได้ทั้งระบบ AI เว็บ และแอปมือถือ พร้อมทดสอบให้แน่ใจว่าทำงานถูกต้อง กำลังหาที่ฝึกงานสหกิจ</p>
         <dl class="hero__facts" data-hero-fade>
           <div><dt>Internship</dt><dd>เริ่ม 11 มกราคม 2570</dd></div>
           <div><dt>Study</dt><dd>Computer Science ปี 4 · UTCC</dd></div>
           <div><dt>GPAX</dt><dd>3.58</dd></div>
-          <div><dt>Focus</dt><dd>YOLO · Object detection · Dataset</dd></div>
+          <div><dt>Languages</dt><dd>Python · Java · JavaScript · Kotlin</dd></div>
         </dl>
         <div class="hero__actions" data-hero-fade>
           <a class="btn" href="#projects">View Projects</a>
@@ -65,19 +64,53 @@
       </div>
     </section>
 
+    <section id="roles" class="roles" aria-labelledby="roles-title">
+      <h2 id="roles-title" data-reveal>What I can do</h2>
+      <div class="roles__grid">
+        <a class="role" href="?role=dev#projects" data-role-link="dev" data-reveal>
+          <h3>Software Developer</h3>
+          <p>สร้าง REST API ด้วย Spring Boot เชื่อม PostgreSQL บน Supabase และหน้าเว็บ JavaScript ที่ดึงข้อมูลจาก API</p>
+          <span class="role__more">UTCC RECOM · Braille Scanner →</span>
+        </a>
+        <a class="role" href="?role=ai#projects" data-role-link="ai" data-reveal>
+          <h3>AI Engineer</h3>
+          <p>เตรียมและ annotate dataset ด้วย Roboflow เทรนโมเดล YOLO และใช้ OpenCV ต่อกับตัวถอดรหัสเบรลล์และเสียงพูด</p>
+          <span class="role__more">Braille Scanner · UTCC RECOM →</span>
+        </a>
+        <a class="role" href="?role=mobile#projects" data-role-link="mobile" data-reveal>
+          <h3>Mobile Developer</h3>
+          <p>แอป Android ด้วย Kotlin หลายหน้าจอ เก็บข้อมูลด้วย SQLite มีระบบตะกร้าและคำนวณราคา</p>
+          <span class="role__more">FlyFood →</span>
+        </a>
+        <a class="role" href="?role=testing#projects" data-role-link="testing" data-reveal>
+          <h3>QA Tester</h3>
+          <p>เขียน manual test cases, API checks และ bug reports ใน UTCC RECOM และทดสอบการทำงานของระบบ Braille Scanner</p>
+          <span class="role__more">UTCC RECOM · Braille Scanner →</span>
+        </a>
+      </div>
+    </section>
+
     <section id="projects" class="projects" aria-labelledby="projects-title">
       <div class="section-head" data-reveal>
         <h2 id="projects-title">Projects</h2>
-        <p>งานหลักคือ Computer Vision ด้วย YOLO ตามด้วยงาน Full-stack และ Mobile ทุกงานอยู่ที่ GitHub</p>
+        <p>งานที่ครอบคลุม Software Development, AI, Mobile และ Testing ทุกงานอยู่ที่ GitHub เลือกสายงานเพื่อดูเฉพาะงานที่เกี่ยวข้อง</p>
+      </div>
+      <div class="filter" role="group" aria-label="กรองโปรเจกต์ตามสายงาน" hidden>
+        <button type="button" data-filter="all" aria-pressed="true">ทั้งหมด</button>
+        <button type="button" data-filter="dev" aria-pressed="false">Software Dev</button>
+        <button type="button" data-filter="ai" aria-pressed="false">AI</button>
+        <button type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+        <button type="button" data-filter="testing" aria-pressed="false">Testing</button>
       </div>
 
-      <article class="project project--braille" data-reveal>
+      <article class="project project--braille" data-roles="ai dev testing" data-reveal>
         <figure class="project__media" data-parallax data-scan data-label="braille-scanner 0.97" style="view-transition-name: vt-braille">
           <a class="project__media-link" href="projects/braille.html" tabindex="-1" aria-hidden="true"><img src="assets/projects/braille-detection.webp" width="1428" height="926" loading="lazy" alt="หน้าจอสแกนเนอร์ตรวจจับเซลล์เบรลล์จากกล้องจริง พร้อมข้อความภาษาไทยที่ถอดรหัสได้"></a>
         </figure>
         <div class="project__body">
           <h3>Braille-to-Speech Scanner</h3>
           <p class="project__meta">Computer Vision / AI · Team project · 2026</p>
+          <p class="project__roles">AI · Software Dev · Testing</p>
           <p>ต้นแบบระบบอ่านอักษรเบรลล์ไทย/อังกฤษจากกล้อง แปลงเป็นข้อความและเสียงพูด ให้ครูและผู้ปกครองที่อ่านเบรลล์ไม่เป็นตรวจเนื้อหาได้ทันที เป็นงานทีมที่แบ่งงานกันทำ โดยผมร่วมทำทุกส่วนของระบบ ตั้งแต่ dataset และโมเดล YOLO ไปจนถึงตัวถอดรหัสและเสียงพูด</p>
           <ul class="project__points">
             <li>เตรียม dataset และ annotate ด้วย Roboflow แล้วเทรนโมเดล YOLO</li>
@@ -113,7 +146,7 @@
       </article>
 
       <div class="project-pair">
-        <article class="project project--small" data-reveal>
+        <article class="project project--small" data-roles="dev testing ai" data-reveal>
           <a class="project__media-link" href="projects/utcc.html" tabindex="-1" aria-hidden="true">
             <figure class="project__media project__media--tone" data-parallax data-scan data-label="utcc-recom 0.95" style="view-transition-name: vt-utcc">
               <img src="assets/projects/utcc-home.webp" width="1600" height="770" loading="lazy" alt="หน้าแรกของเว็บ UTCC RECOM ค้นหาสถานที่รอบมหาวิทยาลัยหอการค้าไทย">
@@ -121,6 +154,7 @@
           </a>
           <h3>UTCC RECOM</h3>
           <p class="project__meta">Recommendation Website · Full-stack · 2025–2026</p>
+          <p class="project__roles">Software Dev · Testing · AI</p>
           <p>เว็บแนะนำอาคารและสถานที่ในมหาวิทยาลัยหอการค้าไทยและรอบมหาวิทยาลัย พร้อมแผนที่ รีวิว และ AI chatbot</p>
           <ul class="project__points">
             <li>ค้นหา กรองตามหมวดหมู่ และอัปเดตเนื้อหาด้วย JavaScript ดึงข้อมูลจาก REST API</li>
@@ -134,7 +168,7 @@
           </div>
         </article>
 
-        <article class="project project--small" data-reveal>
+        <article class="project project--small" data-roles="mobile dev" data-reveal>
           <a class="project__media-link" href="projects/flyfood.html" tabindex="-1" aria-hidden="true">
             <figure class="project__media project__media--tone phones" data-parallax data-scan data-label="flyfood 0.93" style="view-transition-name: vt-flyfood">
               <img src="assets/projects/flyfood-home.webp" width="390" height="771" loading="lazy" alt="หน้าหลักแอป FlyFood แสดงเมนูอาหารยอดนิยม">
@@ -144,6 +178,7 @@
           </a>
           <h3>FlyFood</h3>
           <p class="project__meta">Android Food Ordering · 2024–2025</p>
+          <p class="project__roles">Mobile · Software Dev</p>
           <p>แอปสั่งอาหารบน Android มีเมนู โปรโมชั่น และตะกร้าสินค้า เก็บข้อมูลในเครื่องด้วย SQLite</p>
           <ul class="project__points">
             <li>หลายหน้าจอเชื่อมกันด้วย Activity และ Intent</li>
@@ -162,14 +197,14 @@
     <section id="about" class="about" aria-labelledby="about-title">
       <h2 id="about-title" data-reveal>About</h2>
       <div class="about__text" data-reveal>
-        <p class="about__statement">ผมสนใจเส้นทาง AI Engineer เป็นหลัก โดยเฉพาะงาน Computer Vision ที่ใช้งานได้จริง</p>
-        <p class="about__body">ผมเคยร่วมทำระบบอ่านอักษรเบรลล์จากกล้องตั้งแต่ต้นจนจบ ทั้งเตรียมและ annotate dataset ด้วย Roboflow เทรนโมเดล YOLO ตรวจจับจุดด้วย OpenCV ไปจนถึงตัวถอดรหัสภาษาไทยและระบบอ่านออกเสียง นอกจากนี้ยังเคยสร้าง REST API ด้วย Spring Boot เชื่อม PostgreSQL บน Supabase และได้ร่วมงานกับเพื่อนในทีมที่พัฒนา AI chatbot ด้วย Gemini API ทำให้เห็นขั้นตอนการนำ LLM มาเชื่อมกับระบบจริง ตอนนี้ผมกำลังมองหาที่ฝึกงานสหกิจด้าน AI Engineering เพื่อเรียนรู้จากทีมที่มีประสบการณ์ และนำทักษะเหล่านี้ไปช่วยงานจริง</p>
+        <p class="about__statement">ผมชอบสร้างซอฟต์แวร์ที่ใช้งานได้จริง และทดสอบจนแน่ใจว่ามันทำงานถูกต้อง</p>
+        <p class="about__body">ผมเคยร่วมทำระบบอ่านอักษรเบรลล์จากกล้องตั้งแต่ต้นจนจบ ทั้งเตรียม dataset ด้วย Roboflow เทรนโมเดล YOLO ใช้ OpenCV ไปจนถึงตัวถอดรหัสภาษาไทยและเสียงพูด สร้าง REST API ด้วย Spring Boot เชื่อม PostgreSQL บน Supabase พร้อมเขียน test cases และ API checks ตรวจงาน ได้ร่วมงานกับเพื่อนในทีมที่ต่อ Gemini API ทำ AI chatbot และทำแอป Android ด้วย Kotlin กับ SQLite ตอนนี้ผมกำลังมองหาที่ฝึกงานสหกิจสาย Software Developer, AI Engineer, Mobile Developer หรือ QA Tester เพื่อเรียนรู้จากทีมที่มีประสบการณ์ และนำทักษะเหล่านี้ไปช่วยงานจริง</p>
       </div>
       <dl class="facts" data-reveal>
         <div><dt>University</dt><dd>มหาวิทยาลัยหอการค้าไทย (UTCC) 2023–2027</dd></div>
         <div><dt>Major</dt><dd>วิทยาการคอมพิวเตอร์ (Computer Science) ปี 4</dd></div>
         <div><dt>Coursework</dt><dd>Artificial Intelligence, Software Engineering, Database, Data Structures, Web, Mobile</dd></div>
-        <div><dt>Looking for</dt><dd>ฝึกงานสหกิจสาย AI Engineer / Computer Vision เริ่ม 11 มกราคม 2570</dd></div>
+        <div><dt>Looking for</dt><dd>ฝึกงานสหกิจสาย Software Developer, AI Engineer, Mobile Developer หรือ QA Tester เริ่ม 11 มกราคม 2570</dd></div>
       </dl>
     </section>
 
@@ -178,19 +213,20 @@
       <div class="skills__groups">
         <div class="skills__group" data-reveal><h3>AI &amp; Computer Vision</h3><ul data-stagger><li>YOLO</li><li>Object detection</li><li>Model training</li><li>Dataset preparation</li><li>Image annotation</li></ul></div>
         <div class="skills__group" data-reveal><h3>Languages</h3><ul data-stagger><li>Python</li><li>JavaScript</li><li>Java</li><li>Kotlin</li></ul></div>
-        <div class="skills__group" data-reveal><h3>Tools</h3><ul data-stagger><li>Roboflow</li><li>Git</li><li>GitHub</li><li>Postman</li><li>Android Studio</li></ul></div>
+        <div class="skills__group" data-reveal><h3>Tools</h3><ul data-stagger><li>Roboflow</li><li>Git</li><li>GitHub</li><li>Postman</li></ul></div>
         <div class="skills__group" data-reveal><h3>Back-End &amp; APIs</h3><ul data-stagger><li>Spring Boot</li><li>REST APIs</li></ul></div>
         <div class="skills__group" data-reveal><h3>Databases</h3><ul data-stagger><li>PostgreSQL</li><li>Supabase</li><li>SQLite</li></ul></div>
+        <div class="skills__group" data-reveal><h3>Testing</h3><ul data-stagger><li>Manual test cases</li><li>API testing</li><li>Bug reports</li><li>Regression checklist</li></ul></div>
+        <div class="skills__group" data-reveal><h3>Mobile</h3><ul data-stagger><li>Android Studio</li><li>XML Layout</li><li>SQLite</li></ul></div>
         <div class="skills__group" data-reveal><h3>Web</h3><ul data-stagger><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
       </div>
     </section>
 
     <section id="contact" class="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title" data-reveal>Let’s build AI that works.</h2>
-      <p data-reveal>ถ้าทีมของคุณรับนักศึกษาฝึกงานสาย AI Engineer หรือ Computer Vision โปรดรับผมและชี้แนวทางการทำงานให้ผมด้วยครับ</p>
+      <h2 id="contact-title" data-reveal>Let’s build software that works.</h2>
+      <p data-reveal>ถ้าทีมของคุณรับนักศึกษาฝึกงานสาย Software Developer, AI Engineer, Mobile Developer หรือ QA Tester โปรดรับผมและชี้แนวทางการทำงานให้ผมด้วยครับ</p>
       <a class="contact__email" href="mailto:bavonvit99@gmail.com?subject=Internship%20opportunity" data-reveal>bavonvit99@gmail.com</a>
       <div class="contact__links" data-reveal>
-        <a class="btn" href="assets/resume.pdf" download="Bavonvit-Surin-Resume.pdf">Download Resume</a>
         <a class="link" href="https://github.com/Bobangely" target="_blank" rel="noopener">github.com/Bobangely ↗</a>
       </div>
     </section>
