@@ -34,10 +34,10 @@
     <section class="detail-hero">
       <a class="back" href="../index.html#projects">← กลับหน้าหลัก</a>
       <h1 data-hero-fade>Braille-to-Speech Scanner</h1>
-      <p class="project__meta" data-hero-fade>Computer Vision / AI · Team project · 2026</p>
+      <p class="project__meta" data-hero-fade>Computer Vision / AI · v1 (YOLO) · Team project · 2026</p>
       <p class="detail-lead" data-hero-fade>ต้นแบบระบบอ่านอักษรเบรลล์ภาษาไทย/อังกฤษจากกล้อง แล้วแปลงเป็นข้อความและเสียงพูด ช่วยให้คนที่อ่านเบรลล์ไม่เป็น เช่น ครู ผู้ปกครอง และเจ้าหน้าที่ ตรวจหรือฟังเนื้อหาเบรลล์ได้ทันที</p>
       <div class="detail-actions" data-hero-fade>
-        <a class="btn" href="https://github.com/Bobangely/Braille-to-Speech-Scanner" target="_blank" rel="noopener">View on GitHub ↗</a>
+        <a class="btn" href="https://github.com/Bobangely/Braille-to-Speech-Scanner/tree/v1-yolo" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
       <figure class="detail-cover project__media" style="view-transition-name: vt-braille">
         <img src="../assets/projects/braille-detection.webp" width="1428" height="926" alt="หน้าจอสแกนเนอร์ตรวจจับเซลล์เบรลล์จากกล้องจริง 83 เซลล์ พร้อมข้อความภาษาไทยที่ถอดรหัสได้">
@@ -104,7 +104,7 @@
     frozenset({2, 3, 4, 6}):       <b>'ซ'</b>,    #  (low, dots 2,3,4,6)
     ...
 }</code></pre>
-          <figcaption><strong>ตารางแปลงจุดเป็นตัวอักษร</strong>ชุดจุดของแต่ละเซลล์ (<code>frozenset</code>) ถูกแมปเป็นพยัญชนะไทยตามมาตรฐานเบรลล์ไทย <a class="link" href="https://github.com/Bobangely/Braille-to-Speech-Scanner/blob/HEAD/config_thai_legacy.py#L25-L37" target="_blank" rel="noopener">ดูไฟล์เต็มบน GitHub ↗</a></figcaption>
+          <figcaption><strong>ตารางแปลงจุดเป็นตัวอักษร</strong>ชุดจุดของแต่ละเซลล์ (<code>frozenset</code>) ถูกแมปเป็นพยัญชนะไทยตามมาตรฐานเบรลล์ไทย <a class="link" href="https://github.com/Bobangely/Braille-to-Speech-Scanner/blob/v1-yolo/config_thai_legacy.py#L25-L37" target="_blank" rel="noopener">ดูไฟล์เต็มบน GitHub ↗</a></figcaption>
         </figure>
         <figure class="shot" data-reveal>
           <a href="../assets/projects/braille-decode.webp" data-lightbox data-caption="ถอดรหัสเป็นข้อความไทย “สวัสดีครับผม” 12 เซลล์ 39 จุด"><img src="../assets/projects/braille-decode.webp" width="1275" height="328" loading="lazy" alt="ผลถอดรหัสเบรลล์เป็นข้อความไทย สวัสดีครับผม"></a>
