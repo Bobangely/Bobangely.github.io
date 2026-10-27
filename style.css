@@ -121,15 +121,15 @@ ul { padding: 0; list-style: none; }
   overflow: hidden;
 }
 /* frame is sized by the image, so the box percentages always map onto the face */
-.portrait__frame { position: relative; width: min(78%, 46svh); margin-top: 48px; }
+.portrait__frame { position: relative; width: min(88%, 60svh); margin-top: 56px; }
 .portrait__frame img { width: 100%; }
-/* YOLO-style box around the face; percentages follow the face in avatar.webp (1024x1536) */
+/* YOLO-style box around the face; percentages follow the face in portrait.webp (916x999) */
 .detect {
   position: absolute;
-  left: 14%;
-  top: 2%;
-  width: 68%;
-  height: 37%;
+  left: 30%;
+  top: 6%;
+  width: 38%;
+  height: 45%;
   border: 3px solid var(--accent);
   border-radius: 6px;
 }
@@ -161,7 +161,7 @@ ul { padding: 0; list-style: none; }
   .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .hero__text { order: -1; }
   .hero__portrait { min-height: 0; }
-  .portrait__frame { width: min(70%, 360px); }
+  .portrait__frame { width: min(80%, 420px); }
 }
 @media (max-width: 480px) {
   .hero__facts { grid-template-columns: minmax(0, 1fr); }

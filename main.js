@@ -190,12 +190,10 @@
     const conf = detect.querySelector('[data-confidence]');
     const moveX = gsap.quickTo(detect, 'x', { duration: 0.45, ease: 'power3.out' });
     const moveY = gsap.quickTo(detect, 'y', { duration: 0.45, ease: 'power3.out' });
-    // rough regions of avatar.webp, as fractions of the frame (x from left, y from top)
+    // rough regions of portrait.webp, as fractions of the frame (x from left, y from top)
     const label = (fx, fy) => {
-      if (fx < 0.12 || fx > 0.88 || fy < 0) return ['background', '0.12'];
-      if (fy < 0.4) return ['bavonvit', '0.99'];
-      if (fy < 0.72) return fx > 0.42 && fx < 0.58 ? ['tie', '0.91'] : ['shirt', '0.94'];
-      return ['pants', '0.89'];
+      if (fy < 0.5) return fy >= 0 && fx > 0.3 && fx < 0.68 ? ['bavonvit', '0.99'] : ['background', '0.12'];
+      return fx > 0.45 && fx < 0.55 ? ['tie', '0.91'] : ['shirt', '0.94'];
     };
     const setLabel = ([n, c]) => { if (name.textContent !== n) { name.textContent = n; conf.textContent = c; } };
     portrait.addEventListener('pointermove', e => {
