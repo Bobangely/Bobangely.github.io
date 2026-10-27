@@ -287,6 +287,7 @@ h2 { font-size: clamp(3rem, 8vw, 8rem); letter-spacing: -0.04em; }
 .back { display: inline-block; margin-bottom: clamp(24px, 4vw, 48px); font-weight: 600; text-decoration: none; color: var(--muted); transition: color .2s var(--ease-out); }
 .back:hover { color: var(--accent); }
 .detail-hero h1 { font-size: clamp(2.3rem, 8vw, 8rem); letter-spacing: -0.045em; max-width: 12em; }
+.h1-version { font-size: 0.45em; letter-spacing: 0; white-space: nowrap; color: var(--muted); }
 .detail-hero .project__meta { margin-top: 16px; font-size: 1.1rem; }
 .detail-lead { margin-top: 24px; max-width: 38em; font-size: clamp(1.1rem, 1.5vw, 1.35rem); }
 .detail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 32px; }

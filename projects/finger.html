@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="th" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Braille Finger Reader — Bavonvit Surin</title>
+  <meta name="description" content="สถานีฝึกอ่านอักษรเบรลล์ภาษาไทยด้วยนิ้ว ตามปลายนิ้วด้วย MediaPipe แล้วพูดชื่อตัวอักษรและคำใต้นิ้วทันที">
+  <meta property="og:title" content="Braille Finger Reader — Bavonvit Surin">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bobangely.github.io/projects/finger.html">
+  <meta property="og:image" content="https://bobangely.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Bai+Jamjuree:wght@400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__name" href="../index.html">Bavonvit<span class="mark" aria-hidden="true"></span></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="detail-hero">
+      <a class="back" href="../index.html#projects">← กลับหน้าหลัก</a>
+      <h1 data-hero-fade>Braille Finger Reader</h1>
+      <p class="project__meta" data-hero-fade>Computer Vision · v2 · 2026</p>
+      <p class="detail-lead" data-hero-fade>สถานีฝึกอ่านอักษรเบรลล์ภาษาไทยด้วยนิ้ว ผู้เรียนลากนิ้วบนบรรทัดเบรลล์นูน แล้วระบบพูดชื่อตัวอักษรใต้ปลายนิ้วทันที และพูดทั้งคำเมื่อนิ้วอ่านจบคำ เป็นเวอร์ชันต่อจาก <a class="link" href="braille.html">Braille-to-Speech Scanner (v1)</a> ที่ใช้ YOLO</p>
+      <div class="detail-actions" data-hero-fade>
+        <a class="btn" href="https://github.com/Bobangely/Braille-to-Speech-Scanner" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <figure class="detail-cover project__media" style="view-transition-name: vt-finger">
+        <img src="../assets/projects/finger-reading.webp" width="1273" height="748" alt="ภาพจากกล้องขณะอ่าน: โครงมือจาก MediaPipe บนหน้าหนังสือเบรลล์ กรอบสีแบ่งคำ และเซลล์สีเขียวใต้ปลายนิ้ว">
+      </figure>
+    </section>
+
+    <section class="detail-section" aria-labelledby="overview-title">
+      <h2 id="overview-title" data-reveal>Overview</h2>
+      <div class="overview" data-reveal>
+        <div>
+          <h3>หลักการ</h3>
+          <p>หนังสือแต่ละหน้ามี 2 บรรทัดคู่กัน คือบรรทัดจุดสีน้ำเงินที่พิมพ์ไว้ให้กล้องอ่าน และบรรทัดนูนที่เขียนด้วยสเลทไว้ให้นิ้วสัมผัสอยู่ใต้บรรทัดสีพอดี กล้องอ่านบรรทัดสี ส่วน MediaPipe ตามตำแหน่งนิ้ว ระบบจึงรู้ว่านิ้วอยู่บนเซลล์ไหน</p>
+        </div>
+        <div>
+          <h3>จุดเด่น</h3>
+          <ul class="project__points">
+            <li>เริ่มพูดประมาณ 0.2 วินาทีหลังนิ้วแตะเซลล์ เพราะเตรียมเสียงทั้งหน้าไว้ล่วงหน้า</li>
+            <li>กระดาษเลื่อนระหว่างอ่านได้ ระบบตามหน้าเดิมต่อ และจำหน้าใหม่เองเมื่อพลิกหน้า</li>
+            <li>ใช้เสียง Edge TTS เมื่อมีอินเทอร์เน็ต และ Piper เมื่อออฟไลน์</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tech stack</h3>
+          <p class="project__stack">Python 3.12 · OpenCV (ArUco, HSV) · MediaPipe Hand Landmarker · Edge TTS · Piper TTS · python-docx</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="pipeline-title">
+      <h2 id="pipeline-title" data-reveal>How it works</h2>
+      <div class="gallery gallery--steps">
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/finger-station.webp" data-lightbox data-caption="แบบจำลองสถานีอ่าน: กล้องติดแขนด้านบน มองลงตรงที่หน้าหนังสือ"><img src="../assets/projects/finger-station.webp" width="1200" height="1100" loading="lazy" alt="แบบจำลอง 3D ของสถานีอ่าน มีกล้องบนแขนยื่นเหนือหน้าหนังสือ"></a>
+          <figcaption><strong>สถานีอ่าน</strong>กล้อง 1080p สูง 270 มม. มองลงตรงที่หน้าหนังสือ</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/finger-book.webp" data-lightbox data-caption="หน้าหนังสือจริงจากกล้อง: marker ArUco 4 มุมและบรรทัดจุดสีน้ำเงิน"><img src="../assets/projects/finger-book.webp" width="1600" height="900" loading="lazy" alt="หน้าหนังสือเบรลล์จากกล้อง มี marker ArUco ที่มุมทั้งสี่และบรรทัดจุดสีน้ำเงิน"></a>
+          <figcaption><strong>หน้าหนังสือ + ArUco marker</strong>marker 4 มุมแปลงพิกัดภาพเป็นมิลลิเมตรบนหน้า แล้วอ่านจุดสีน้ำเงินด้วย HSV + Otsu จัดเป็นบรรทัด เซลล์ และคำ</figcaption>
+        </figure>
+        <figure class="shot" data-reveal>
+          <a href="../assets/projects/finger-reading.webp" data-lightbox data-caption="ขณะอ่าน: โครงมือจาก MediaPipe จุดอ่านบนนิ้วชี้ และเซลล์สีเขียวใต้นิ้ว"><img src="../assets/projects/finger-reading.webp" width="1273" height="748" loading="lazy" alt="ภาพขณะอ่านด้วยนิ้ว พร้อมโครงมือ กรอบคำ และเซลล์ที่นิ้วแตะ"></a>
+          <figcaption><strong>ตามนิ้วด้วย MediaPipe</strong>นิ้วเข้าเซลล์ใหม่ ระบบพูดชื่อตัวอักษร นิ้วออกจากคำ ระบบพูดทั้งคำ</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="mediapipe-title">
+      <h2 id="mediapipe-title" data-reveal>Why MediaPipe</h2>
+      <ul class="detail-list" data-reveal>
+        <li>ได้ตำแหน่งข้อนิ้ว 21 จุดต่อมือจากภาพ RGB ธรรมดา ไม่ต้องฝึกโมเดลเองหรือติดเซนเซอร์ที่นิ้ว</li>
+        <li>ใช้ปลายนิ้วชี้ (landmark 8) ขยับเข้าหาข้อนิ้วเล็กน้อย ให้ตรงกับส่วนที่สัมผัสจุดจริง</li>
+        <li>ล็อกนิ้วที่กำลังอ่านไว้แม้มีสองมือในภาพ และคงล็อกไว้เมื่อตรวจไม่เจอชั่วครู่</li>
+        <li>แปลงตำแหน่งนิ้วเป็นมิลลิเมตรด้วย homography จาก marker แล้วใช้ state machine ตัดสินว่านิ้วเข้าเซลล์ใหม่ อยู่ระหว่างคำ หรือยกนิ้ว</li>
+      </ul>
+    </section>
+
+    <section class="detail-section" aria-labelledby="results-title">
+      <h2 id="results-title" data-reveal>Results &amp; limits</h2>
+      <ul class="detail-list" data-reveal>
+        <li>ทดสอบจริงที่กล้องสูง 270 มม. อ่านเซลล์ถูก 59 จาก 60 เซลล์</li>
+        <li>มีชุด unit test และเครื่องมือวัดความแม่นการอ่านจากภาพถ่ายเทียบข้อความเฉลย</li>
+        <li>อ่านได้เฉพาะหนังสือที่ทำตามรูปแบบ (มีบรรทัดสีและ marker)</li>
+        <li>ทดสอบบน Windows เท่านั้น และยังไม่ได้ทดสอบกับผู้เรียนจริงและหนังสือหลายหน้า</li>
+      </ul>
+    </section>
+
+    <a class="next-project" href="braille.html" data-reveal>
+      <span>Next project</span>
+      <strong>Braille-to-Speech Scanner (v1) →</strong>
+    </a>
+    <div class="detail-footer-gap"></div>
+  </main>
+
+  <dialog class="lightbox" aria-label="ภาพขยาย">
+    <button class="lightbox__close" type="button" aria-label="ปิดภาพขยาย">✕</button>
+    <figure><img alt=""><figcaption></figcaption></figure>
+  </dialog>
+
+  <footer class="footer">
+    <p class="footer__name" aria-hidden="true">Bavonvit Surin</p>
+    <p class="footer__copy">© 2026 Bavonvit Surin</p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script defer src="../main.js"></script>
+</body>
+</html>

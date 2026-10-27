@@ -70,17 +70,42 @@
         <p> ทุกผลงานอยู่ที่ GitHub เลือกชมผลงานได้เลย </p>
       </div>
       <div class="tabs" role="group" aria-label="เลือกผลงานที่จะแสดงเป็นอันดับแรก" hidden>
-        <button type="button" data-project="braille" aria-pressed="true">Braille-to-Speech Scanner</button>
+        <button type="button" data-project="finger" aria-pressed="true">Braille Finger Reader</button>
+        <button type="button" data-project="braille" aria-pressed="false">Braille Scanner (v1)</button>
         <button type="button" data-project="utcc" aria-pressed="false">UTCC RECOM</button>
         <button type="button" data-project="flyfood" aria-pressed="false">FlyFood</button>
       </div>
 
+      <article class="project project--row" id="project-finger">
+        <a class="project__media-link" href="projects/finger.html" tabindex="-1" aria-hidden="true">
+          <figure class="project__media" data-parallax data-scan data-label="finger-reader 0.98" style="view-transition-name: vt-finger">
+            <img src="assets/projects/finger-reading.webp" width="1273" height="748" loading="lazy" alt="ภาพจากกล้องขณะอ่านเบรลล์ด้วยนิ้ว พร้อมโครงมือจาก MediaPipe และเซลล์ใต้ปลายนิ้ว">
+          </figure>
+        </a>
+        <div class="project__body">
+          <h3>Braille Finger Reader</h3>
+          <p class="project__meta">Computer Vision · v2 · 2026</p>
+          <p class="project__roles">AI · Software Dev · Testing</p>
+          <p>สถานีฝึกอ่านอักษรเบรลล์ภาษาไทยด้วยนิ้ว ผู้เรียนลากนิ้วบนบรรทัดเบรลล์นูน แล้วระบบพูดชื่อตัวอักษรใต้ปลายนิ้วทันที และพูดทั้งคำเมื่ออ่านจบคำ ต่อยอดจากเวอร์ชันแรกที่ใช้ YOLO</p>
+          <ul class="project__points">
+            <li>ตามปลายนิ้วชี้ด้วย MediaPipe Hand Landmarker</li>
+            <li>ArUco marker 4 มุมแปลงพิกัดภาพเป็นมิลลิเมตรบนหน้า</li>
+            <li>อ่านจุดสีด้วย HSV + Otsu แล้วถอดเป็นภาษาไทย</li>
+            <li>ทดสอบจริงที่กล้องสูง 270 มม. อ่านเซลล์ถูก 59 จาก 60</li>
+          </ul>
+          <p class="project__stack">Python · OpenCV · MediaPipe · ArUco · Edge TTS / Piper</p>
+          <div class="more">
+            <a class="btn" href="projects/finger.html">ดูรายละเอียด →</a>
+            <a class="link" href="https://github.com/Bobangely/Braille-to-Speech-Scanner" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </div>
+      </article>
       <article class="project project--row project--braille" id="project-braille">
         <figure class="project__media" data-parallax data-scan data-label="braille-scanner 0.97" style="view-transition-name: vt-braille">
           <a class="project__media-link" href="projects/braille.html" tabindex="-1" aria-hidden="true"><img src="assets/projects/braille-detection.webp" width="1428" height="926" loading="lazy" alt="หน้าจอสแกนเนอร์ตรวจจับเซลล์เบรลล์จากกล้องจริง พร้อมข้อความภาษาไทยที่ถอดรหัสได้"></a>
         </figure>
         <div class="project__body">
-          <h3>Braille-to-Speech Scanner</h3>
+          <h3>Braille-to-Speech Scanner (v1)</h3>
           <p class="project__meta">Computer Vision / AI · v1 (YOLO) · Team project · 2026</p>
           <p class="project__roles">AI · Software Dev · Testing</p>
           <p>ต้นแบบระบบอ่านอักษรเบรลล์ไทย/อังกฤษจากกล้อง แปลงเป็นข้อความและเสียงพูด ให้ครูและผู้ปกครองที่อ่านเบรลล์ไม่เป็นตรวจเนื้อหาได้ทันที เป็นงานทีมที่แบ่งงานกันทำ โดยผมร่วมทำทุกส่วนของระบบ ตั้งแต่ dataset และโมเดล YOLO ไปจนถึงตัวถอดรหัสและเสียงพูด</p>
